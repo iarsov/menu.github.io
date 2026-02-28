@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsov Caffee | Retro Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto+Mono:wght@500&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --board-bg: #1a1a1a;
+            --board-lines: #2a2a2a;
+            --letter-white: #e0e0e0;
+            --letter-gold: #f4b400; 
+            --warm-white: #FFF9F2;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--warm-white);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), 
+                             url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 35vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 5px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .board-container {
+            max-width: 650px;
+            margin: -40px auto 60px;
+            padding: 10px;
+            background: #333;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 12px solid #222;
+        }
+
+        .letterboard {
+            background-color: var(--board-bg);
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 18px,
+                var(--board-lines) 18px,
+                var(--board-lines) 20px
+            );
+            padding: 40px 30px;
+            font-family: 'Roboto Mono', monospace;
+            text-transform: uppercase;
+        }
+
+        .board-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .board-header h2 {
+            color: #5dade2; 
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .board-header h3 {
+            color: var(--letter-white);
+            font-size: 1.1rem;
+            letter-spacing: 5px;
+        }
+
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            min-height: 48px;
+        }
+
+        .item-name {
+            color: var(--letter-white);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item-thumb {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1.5px solid #444;
+        }
+
+        .item-price {
+            color: var(--letter-gold);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 500px) {
+            .letterboard { padding: 25px 15px; }
+            .item-name { font-size: 0.85rem; gap: 10px; }
+            .item-price { font-size: 0.85rem; }
+            .item-thumb { width: 35px; height: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Arsov Caffee</h1>
+        <p>Sunshine & Tradition</p>
+    </header>
+
+    <div class="board-container">
+        <main class="letterboard">
+            <div class="board-header">
+                <h2>ARSOV CAFFEE BAR</h2>
+            </div>
+
+            <div class="menu-row">
+                <div class="item-name">
+                    <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=150&q=80" class="item-thumb" alt="Espresso">
+                    Espresso / Doppelt
+                </div>
+                <div class="item-price">2,10 / 3,10</div>
+            </div>
+
+            <div class="menu-row">
+                <div class="item-name">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=150&q=80" class="item-thumb" alt="Cappuccino">
+                    Cappuccino (Rosetta/Tulip)
+                </div>
+                <div class="item-price">3,20</div>
+            </div>
+
+            <div class="menu-row">
+                <div class="item-name">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=150&q=80" class="item-thumb" alt="Macchiato">
+                    Macchiato (Rosetta/Tulip)
+                </div>
+                <div class="item-price">3,20</div>
+            </div>
+
+            <div class="menu-row">
+                <div class="item-name">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=150&q=80" class="item-thumb" alt="Latte">
+                    Caffe Latte
+                </div>
+                <div class="item-price">3,60</div>
+            </div>
+
+            <div class="menu-row">
+                <div class="item-name">
+                    <img src="https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?auto=format&fit=crop&w=150&q=80" class="item-thumb" alt="Flat White">
+                    Flat White
+                </div>
+                <div class="item-price">4,20</div>
+            </div>
+
+            <div class="menu-row" style="margin-top: 24px;">
+                <div class="item-name">Extra Shot</div>
+                <div class="item-price">1,00</div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Arsov Caffee. Alle Preise in Euro inkl. MwSt.</p>
+    </footer>
+
+</body>
+</html>
